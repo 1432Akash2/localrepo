@@ -1,3 +1,14 @@
-print("app.py is running")
-print("This is a test of the local repository.")
-print("This code is being executed from the local repository.")
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, World! This is my basic Flask app."
+
+@app.route('/about')
+def about():
+    return "This is the about page."
+
+if __name__ == '__main__':
+    app.run(debug=True)
